@@ -1,11 +1,9 @@
 import numpy as np
 
 import task_1
-import task_2
 import task_3
-import task_4
-import task_5
 import task_6
+from car_utils import boost_cars, create_cars, print_cars
 
 
 def separator(t):
@@ -19,31 +17,31 @@ print('Five most common letters:', *task_1.get_five(verse))
 
 # Task 2.
 separator(2)
-cars = task_2.create_cars()
-task_2.print_cars(cars)
+cars = create_cars('nt')
+print_cars(cars)
 
 # Task 3.
 separator(3)
 three_highest_cars = task_3.three_highest(cars)
 three_fastest_cars = task_3.three_fastest(cars)
 print('The highest cars:')
-task_2.print_cars(three_highest_cars)
+print_cars(three_highest_cars)
 print('\nThe most powerful cars:')
-task_2.print_cars(three_fastest_cars)
+print_cars(three_fastest_cars)
 
 # Task 4.
 separator(4)
-cars = task_4.create_cars()
+cars = create_cars('rc')
 fastest_cars = task_3.three_fastest(cars)
 print("===== Before Boost =====")
-task_2.print_cars(fastest_cars)
-task_4.boost_cars(fastest_cars)
+print_cars(fastest_cars)
+boost_cars(fastest_cars)
 print("===== After Boost =====")
-task_2.print_cars(fastest_cars)
+print_cars(fastest_cars)
 
 # Task 5.
 separator(5)
-cars = task_5.create_cars()
+cars = create_cars('dc')
 fastest_cars = task_3.three_fastest(cars)
 for car in fastest_cars:
     print(f'{car.brand} {car.model} fuel consumption: {car.consumption}L or {car.miles_per_gallon()} mpg')
